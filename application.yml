@@ -1,0 +1,11 @@
+apply:
+  message: "/testgatewayapplies/**"
+  routes:
+    - id: whtma
+      uri: http://localhost:8081/
+      predicates:
+        - Path= /servicegateway-apply/applyapi/v5/history, /servicegateway-apply/applyapi/v3/history-description
+    - id: profile-performance
+      uri: http://localhost:8081/
+      predicates:
+        - Path= /servicegateway-apply/activity/jobseeker/self, /servicegateway-apply/jobseeker/self/search-impressions
