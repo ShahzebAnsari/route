@@ -5,34 +5,6 @@ apply:
       uri: http://localhost:8082/
       predicates:
         - Path= /servicegateway-apply/applyapi/v5/history, /servicegateway-apply/applyapi/v3/history-description
-      filters:
-        - name: NIJobseekerAuthentication
-          args:
-            excludeEndPoints: /first/service, /second-service
-            authenticationOptional: false
-            stripTokens: true
-            signingKeyString: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnzyis1ZjfNB0bBgKFMSv
-                               vkTtwlvBsaJq7S5wA+kzeVOVpVWwkWdVha4s38XM/pa/yr47av7+z3VTmvDRyAHc
-                               aT92whREFpLv9cj5lTeJSibyr/Mrm/YtjCZVWgaOYIhwrXwKLqPr/11inWsAkfIy
-                               tvHWTxZYEcXLgAXFuUuaS3uF9gEiNQwzGTU1v0FqkqTBr4B8nW3HCN47XUu0t8Y0
-                               e+lf4s4OxQawWD79J9/5d3Ry0vbV3Am1FtGJiJvOwRsIfVChDpYStTcHTCMqtvWb
-                               V6L11BWkpzGXSW4Hv43qa+GSYOD2QU68Mb59oSk2OB+BtOLpJofmbGEGgvmwyCI9
-                               MwIDAQAB"
-            urlSettings:
-              - requestURLPattern: /servicegateway-apply/applyapi/v5/history
-                requiredUserRoles:  abc  ,   UseR  ,  admin
-                claimURLPattern: /servicegateway-apply/applyapi/v5/history
-                propagateUserContext: false
-              - requestURLPattern: /servicegateway-apply/applyapi/v3/history-description
-                requiredUserRoles:  abc  ,   UseR  ,  admin
-                claimURLPattern: /servicegateway-apply/applyapi/v3/history-description
-                propagateUserContext: false
-            requireJWT: true
-            requiredClaims: exp, sub, userRole
-            kafkaConfig:
-              bootstrapServer: 192.168.40.145:9092
-              topic: gateway_test
-              clientId: test
     - id: profile-performance
       uri: http://localhost:8082/
       predicates:
