@@ -5,9 +5,6 @@ apply:
       uri: http://localhost:8082/
       predicates:
         - Path= /servicegateway-apply/applyapi/v5/history, /servicegateway-apply/applyapi/v3/history-description
-      metadata:
-        response-timeout: 1500 #ms
-        connect-timeout: 1000
     - id: profile-performance
       uri: http://localhost:8082/
       predicates:
